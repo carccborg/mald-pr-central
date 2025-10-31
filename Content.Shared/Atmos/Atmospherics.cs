@@ -319,8 +319,23 @@ namespace Content.Shared.Atmos
         public const float TritiumBurnOxyFactor = 100f;
         public const float TritiumBurnTritFactor = 10f;
 
-        public const float FrezonCoolLowerTemperature = 23.15f;
+        /// <summary>
+        ///     Determines the threshold above which tritium produces radiation sources.
+        /// </summary>
+        public const float TritiumRadiationThreshold = 0.01f;
 
+        /// <summary>
+        ///     Determines the radius in tiles that tritium will be clustered into for radiation calculations.
+        /// </summary>
+        public const float TritiumRadiationClusterRadius = 2f;
+
+        /// <summary>
+        ///     Determines the radiation emitted by tritium per mol.
+        /// </summary>
+        public const float TritiumRadsPerMol = 0.01;
+  
+        public const float FrezonCoolLowerTemperature = 23.15f;
+f;
         /// <summary>
         ///     Frezon cools better at higher temperatures.
         /// </summary>
