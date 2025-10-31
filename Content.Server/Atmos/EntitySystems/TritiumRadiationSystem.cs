@@ -46,29 +46,33 @@ public sealed class TritiumRadiationSystem : EntitySystem
 			// var clusters = ClusterTritiumTiles(tritiumTiles);
 			// foreach (var cluster in clusters)
 				// var rads = cluster.RadsPerSecond;
-				// RADIATION???
-		// for each active tile on that grid,
-		// if the tile has no atmosphere, skip this tile
-		// get the number of moles of tritium on that tile
-		// if the number of moles is below a constant, skip this tile
-		// cluster tiles together and sum their sources together
-		// create a virtual radiation source every 1-2s using the clustered tiles' summed tritium mols
+				// ApplyClusterRads(cluster);
 	}
 	
 
 	private List<TritiumCluster> ClusterTritiumTiles(List<EntityCoordinates> tiles) {
 		// TODO: implement helper that clusters tritium tiles together
 
-		// take a list of coordinates
-		// for each coordinate
-		// if we've visited it, skip it
-		// if the tile has no atmosphere or the number of moles of tritium is below a constant, skip this tile
-		// create a new cluster and initialize its coordinates as the current coordinates
-		// merge neighbors (taken from the list of active tiles) within ClusterRadius
-		// increment the rads of the cluster by the rads of the merged neighbor
-		// mark the neighbor as visited
-		// repeat until there are no more unvisited neighbors
-		// return a list of clusters
+		// var visited = new HashSet<EntityCoordinates>();
+		// var clusters = new List<TritiumCluster>();
+		// foreach (var tile in tiles)
+			// if (visited.Contains(tile)) continue;
+			// var cluster = new TritiumCluster();
+			// var toVisit = new Queue<EntityCoordinates>();
+			// toVisit.Enqueue(tile);
+
+			// while (toVisit.Count > 0)
+				// var current = toVisit.Dequeue();
+				// if (visited.Contains(current)) continue;
+				// visited.Add(current);
+				// cluster.Tiles.Add(current);
+
+				// foreach (var neighbor in tiles)
+					// if (!visited.Contains(neighbor)) && (neighbor.Position - current.Position).Length <= Atmospherics.TritiumClusterRadius))
+						// toVisit.Enqueue(neighbor);
+			// clusters.Add(cluster);
+				
+		// return cluster;
 	}
 
 	private void ApplyClusterRads(TritiumCluster cluster) {
