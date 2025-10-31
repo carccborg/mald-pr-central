@@ -9,6 +9,8 @@ namespace Content.Server.Atmos;
 /// <summary>
 /// Applies radiation to nearby entities when Tritium exists in nearby active atmos tiles.
 /// <summary>
+
+[UpdateAfter(typeof(AtmosphereSystem))]
 public sealed class TritiumRadiationSystem : EntitySystem
 {
 	// TODO: implement
@@ -18,6 +20,6 @@ public sealed class TritiumRadiationSystem : EntitySystem
 			// if the tile has no atmosphere, skip this tile
 			// get the number of moles of tritium on that tile
 			// if the number of moles is below a constant, skip this tile
-			// calculate a number of rads
-			// apply radiation
+			// cluster tiles together and sum their sources together
+			// create a virtual radiation source every 1-2s using the clustered tiles' summed tritium mols
 }
